@@ -2,7 +2,7 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 
-int Array[] = { 0x3F, 0x06, 0x5B, 0x4F, 0x66, 0x6D, 0x7D, 0x07, 0x7F, 0x6F };
+int Array[] = {0xC0,0xF9,0xA4,0xB0,0x99,0x92,0x82,0xF8,0x80,0x90};
 
 
 int main()
@@ -12,16 +12,16 @@ int main()
     DDRD = 0xFF;
     while (1){
         for(temp = 0; temp < 10000; temp++){
-        PORTC = 0xF7;
+        PORTC = 0x07;
         PORTD = Array[(temp / 1) % 10];
         _delay_ms(1);
-        PORTC = 0xFB;
+        PORTC = 0x0B;
         PORTD = Array[(temp / 10) % 10];
         _delay_ms(1);
-        PORTC = 0xFD;
+        PORTC = 0x0D;
         PORTD = Array[(temp / 100) % 10];
         _delay_ms(1);
-        PORTC = 0xFE;
+        PORTC = 0x0E;
         PORTD = Array[(temp / 1000) % 10];
         _delay_ms(1);    
     }        

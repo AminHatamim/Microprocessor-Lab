@@ -1,0 +1,26 @@
+{
+  "configurations": [
+    {
+      "name": "AVR",
+      "includePath": [
+        "C:/Users/Asus/Desktop/programs/avr8/avr/include/avr/**",
+        "C:/Users/Asus/Desktop/programs/avr8/avr/include**",
+        "${workspaceFolder}/**"
+      ],
+      "defines": [
+        "_DEBUG",
+        "UNICODE",
+        "_UNICODE",
+        "__AVR_ATmega16__"
+      ],
+      "compilerPath": "C:/Users/Asus/Desktop/programs/avr8/bin/avr-gcc.exe",
+      "cStandard": "c11",
+      "cppStandard": "c++11",
+      "intelliSenseMode": "gcc-x64",
+      "compilerArgs": [
+        "-mmcu=atmega16"
+      ]
+    }
+  ],
+  "version": 4
+}

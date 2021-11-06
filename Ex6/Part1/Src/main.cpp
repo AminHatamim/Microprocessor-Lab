@@ -42,7 +42,7 @@ int main(){
 	   
 	   sprintf(Buffer,"%d%c  ", (int)temp, degree);
 	   LCD_String_xy(1,0,Buffer);
-	   	
+		_delay_ms(100);
 	}
 	return 0;
 }

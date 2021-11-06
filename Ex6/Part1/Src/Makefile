@@ -13,7 +13,7 @@
 # ------------------------------------------------------------------
 #
 # Final file
-TARGET      	= Microprocessor
+TARGET      	= Temperature
 #
 # Library directory
 LIBDIR        = lib
@@ -22,7 +22,7 @@ LIBDIR        = lib
 DEVICE        = atmega16
 #
 # Frequency
-FCPU          = 1000000
+FCPU          = 16000000
 #
 # Optimization
 OPTIMIZE      = Os
@@ -52,11 +52,11 @@ AVRSIZE       = avr-size
 # Size flags
 SFLAGS        = --mcu=$(DEVICE) --format=avr
 #
-# Target and dependencies .c
-SOURCES      := $(wildcard *.c $(LIBDIR)/*.c)
+# Target and dependencies .cpp
+SOURCES      := $(wildcard *.cpp $(LIBDIR)/*.cpp)
 #
 # Target and dependencies .o
-OBJECTS	      = $(SOURCES:.c=.o)
+OBJECTS	      = $(SOURCES:.cpp=.o)
 
 # AVRDUDE CONFIGURATION, SETTINGS
 # -------------------------------------------------------------------
@@ -100,7 +100,7 @@ $(TARGET).elf:$(OBJECTS)
 
 #
 # Create object files
-%.o: %.c
+%.o: %.cpp
 	 $(CC) $(CFLAGS) -c $< -o $@
 
 # 
